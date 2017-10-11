@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>阅读文摘</title>
+<link rel="stylesheet"
+	href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+<script src="../js/ref/jquery.jsonp.js"></script>
+<script src="../js/own/GrobalParam.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	
+});
+function callFood(){
+	$.jsonp({
+		url: requestPath + 'test/getFood?foodId=10086',
+		callbackParameter: "callback",
+		success : function(data){
+			$('#content').append('<h3>' + data.id + '-' + data.name + '-' + data.count + '</h3>');;
+		}
+	});
+}
+
+</script>
+<body>
+<div class="container contentCenter">
+	<input type="button" value="小二上菜~" onclick="callFood()"/>
+</div>
+<div id="content"></div>
+</body>
+</html>

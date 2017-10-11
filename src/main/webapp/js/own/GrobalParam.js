@@ -1,0 +1,1 @@
+var requestPath = 'http://localhost:8080/RestfulProject/';
